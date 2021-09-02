@@ -1,0 +1,51 @@
+# -- General Option --
+# Size of the history.
+set history-size 10000000
+# The lines being edited will scroll horizontally on a single line when they are longer than the screen width.
+set horizontal-scroll-mode off
+
+# -- utf-8 --
+# Fix for entering accents with UTF-8.
+set meta-flag on
+set input-meta on
+set output-meta on
+set convert-meta off
+# Displays control characters.
+set echo-control-characters off
+
+# -- Completion --
+# Enable completion with only one tab.
+set show-all-if-ambiguous on
+# Search for hidden files.
+set match-hidden-files on
+# Adding a slash for directories.
+set mark-directories on
+# Added a slash for symbolic links pointing to a directory.
+set mark-symlinked-directories on
+# Indicates the type of file.
+set visible-stats on
+# Ask the user if he wants to see all the possibilities of the completion.
+set completion-query-items 50
+# Case insensitive.
+set completion-ignore-case on
+# List immediately, if ambiguous.
+set show-all-if-unmodified on
+
+# -- Mapping --
+# Up and down arrow to navigate through the history.
+"\e[A":history-search-backward
+"\e[B":history-search-forward
+# Ctrl-A to go to the beginning of the line.
+"\e[1~": beginning-of-line
+# Ctrl-E Go to end of line
+"\e[4~": end-of-line
+# Ctrl + Arrows to navigate between words (duplicates to take into account all types of
+# keyboard)
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+"\e[5C": forward-word
+"\e[5D": backward-word
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+# Alt-s pour insérer sudo
+"\es": "\C-asudo -i \C-e"
