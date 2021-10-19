@@ -109,6 +109,10 @@ fi
 # Vim plugin for decrypting GPG files
 export GPG_TTY=`tty`
 
+# Add bind for auto completion history
+
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'
 
 init_shopt ()	{
 	# Minor errors in the spelling of a directory component of a cd command will be fixed.
