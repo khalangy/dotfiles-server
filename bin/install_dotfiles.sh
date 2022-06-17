@@ -7,7 +7,9 @@ shopt -s dotglob
 ################
 
 dotfilesDir=$(dirname $(dirname $(realpath $0)))
+echo "$dotfilesDir"
 homeDir=$(realpath ~)
+echo "$homeDir"
 vimfilesDir=$homeDir/vimfiles
 
 # Wrapper for cp to work in macOS.
@@ -26,7 +28,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
     cd $dotfilesDir
     # Copy all files here to the current user's home directory; backup any existing files.
-    cp -rv --backup=numbered * $homeDir
+    cp -rv --backup=numbered .* $homeDir
     # Do the same, but with the dist folder's contents.
-    cp -rv --backup=numbered .dotfiles.dist/* $homeDir
+    # cp -rv --backup=numbered .dotfiles.dist/* $homeDir
 fi
